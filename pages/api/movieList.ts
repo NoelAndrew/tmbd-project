@@ -1,4 +1,4 @@
-const getMovieList = (httpClient) => {
+const getMovieList = ( httpClient: any ) => {
     const getMovies= () => httpClient.get(`/movie/popular/`);
 
     return {
