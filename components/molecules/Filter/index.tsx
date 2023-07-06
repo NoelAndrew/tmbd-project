@@ -61,7 +61,7 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                             </div>
                             <div>
                                 <input type="radio" id="betterRated" name="movieSort" className="w-4 h-4 mr-2" onClick={getRatedMovies} />
-                                <label htmlFor="betterRated">Higher Rated</label>
+                                <label htmlFor="betterRated">Top Rated</label>
                             </div>
                         </div>
                     </div>

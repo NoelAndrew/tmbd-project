@@ -17,7 +17,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   background: #FFFF;
   font-family: "Source Sans Pro", Arial, sans-serif;
 }
