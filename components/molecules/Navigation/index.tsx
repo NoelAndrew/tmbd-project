@@ -1,10 +1,14 @@
+import Link from "next/link";
+
 const Navigation = () => {
     return(
     <>
-    <header className="flex items-center justify-between bg-gray-800 text-sm text-white py-4 px-4">
+    <header className="navbar">
         <div className="flex items-center ml-9">
             <div className="mr-4">
-                <img src="/logo.svg" width={154} height={20}/>
+                <Link href="/">
+                    <img src="/logo.svg" width={154} height={20}/>
+                </Link>
             </div>
             <div className="flex">
                 <a className="mr-3 font-semibold hover:text-gray-400">Movies</a>

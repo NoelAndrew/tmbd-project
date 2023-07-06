@@ -1,22 +1,4 @@
-import { useState } from 'react';
-
 const DropNavbar = () => {
-  const [dropdown1Open, setDropdown1Open] = useState(false);
-  const [dropdown2Open, setDropdown2Open] = useState(false);
-  const [dropdown3Open, setDropdown3Open] = useState(false);
-
-  const toggleDropdown1 = () => {
-    setDropdown1Open(!dropdown1Open);
-  };
-
-  const toggleDropdown2 = () => {
-    setDropdown2Open(!dropdown2Open);
-  };
-
-  const toggleDropdown3 = () => {
-    setDropdown3Open(!dropdown3Open);
-  };
-
   return (
     <nav className="flex justify-center bg-white text-white">
         <div className="p-1">

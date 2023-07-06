@@ -61,7 +61,7 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                             </div>
                             <div>
                                 <input type="radio" id="betterRated" name="movieSort" className="w-4 h-4 mr-2" onClick={getRatedMovies} />
-                                <label htmlFor="betterRated">By Upcoming</label>
+                                <label htmlFor="betterRated">Higher Rated</label>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,24 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                 </button>
                 {isOpen2 && (
                 <div className="p-4 bg-white">
-                    <p>Contenido del acordeón</p>
+                    <div className="mt-2">
+                        <div>
+                            <input type="radio" className="w-4 h-4 mr-2" />
+                            <label>Netflix</label>
+                        </div>
+                        <div>
+                            <input type="radio" className="w-4 h-4 mr-2" />
+                            <label>HBO Max</label>
+                        </div>
+                        <div>
+                            <input type="radio" className="w-4 h-4 mr-2" />
+                            <label>Amazon Prime</label>
+                        </div>
+                        <div>
+                            <input type="radio" className="w-4 h-4 mr-2" />
+                            <label>Cinema</label>
+                        </div>
+                    </div>
                 </div>
                 )}
             </div>

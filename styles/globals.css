@@ -18,7 +18,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #FFFF
+  background: #FFFF;
+  font-family: "Source Sans Pro", Arial, sans-serif;
 }
 p {
   font-family: "Source Sans Pro", Arial, sans-serif;
@@ -26,7 +27,6 @@ p {
 .score {
   position: absolute;
   color: white;
-  padding: 6px;
   transform: translateY(-14px);
   margin-left: 10px;
   width: 34px;
@@ -37,6 +37,7 @@ p {
 .movie-card {
   position: relative;
   background-size: cover;
+  background-position-y: -95px;
 }
 
 .movie-card::after {
@@ -46,11 +47,16 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+  background-color: rgba(0, 0, 0, 0.7); /* Ajusta la opacidad aquí */
 }
 .poster {
   width: 80%;
   border-radius: 25px;
+}
+.movie-poster {
+  min-width: 300px;
+  width: 300px;
+  height: 450px;
 }
 .content {
   display: flex;
@@ -71,8 +77,11 @@ p {
   border-radius: 100px;
 }
 .tagline {
+  margin-bottom: 0;
+  font-size: 1.1em;
   font-style: italic;
-  color: #BCBCBC;
+  opacity: .7;
+  color: #fff;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
@@ -101,11 +110,10 @@ p {
 .director-container {
   margin-right: 20%;
 }
-.container {
-}
 .carrousell {
   position: relative;
   overflow: hidden;
+  width: 80%;
 }
 .carrousell::before {
   content: "";
@@ -124,6 +132,83 @@ p {
   height: 320px;
 }
 .right-container {
-  width: 100%;
+  width: 20%;
   padding: 10px;
+}
+.clasification {
+  border: 1px solid rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.6);
+  padding: 0.06em 4px 0.15em !important;
+  line-height: 1;
+  display: inline-grid;
+  align-content: center;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+.more {
+  position: absolute;
+  padding-left: 8.5%;
+  padding-top: 1%;
+  opacity: .6;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f2937;
+  font-size: 0.875rem;
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.cast {
+  display: flex;
+  margin-bottom: 5rem;
+}
+.main-content {
+  display: flex;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+.movie-list {
+  padding: 2.5rem;
+}
+.filter-container{
+  width: 25%;
+}
+.movie-clasification {
+  display: flex;
+}
+
+@media only screen and (max-width: 767px ) {
+  .content {
+    display: block;
+  }
+  .navbar {
+    display: block;
+  }
+  .cast {
+    display: block;
+  }
+  .main-content {
+    display: block;
+  }
+  .card-grid {
+    display: block;
+  }
+  .movie-list {
+    padding: 0;
+  }
+  .filter-container{
+    width: 100%;
+    padding-bottom: 10%;  
+  }
+  .movie-clasification {
+    display: block;
+  }
 }

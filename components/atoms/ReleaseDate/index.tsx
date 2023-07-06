@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ReleaseDate = ({ dateString }: any) => {
+interface Props {
+  dateString: string;
+}
+
+const ReleaseDate = ({ dateString }: Props) => {
 
     const formattedDate = new Date(dateString).toLocaleDateString('en-US', {
       month: 'short',

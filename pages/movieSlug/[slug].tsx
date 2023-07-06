@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { movieServiceId, movieServiceCredit } from "../api";
-import Navigation from "../components/molecules/Navigation";
-import DropNavbar from "../components/atoms/DropNavbar";
-import Percentage from "../components/atoms/Percentage";
-import CastCrew from "../components/atoms/CastCrew";
+import Navigation from "../../components/molecules/Navigation";
+import DropNavbar from "../../components/atoms/DropNavbar";
+import Percentage from "../../components/atoms/Percentage";
+import CastCrew from "../../components/atoms/CastCrew";
+import Clasification from "@/components/atoms/Clasification";
 
 const MyMovie = () => {
     const imageBasePath = 'https://image.tmdb.org/t/p/w500';
@@ -101,15 +102,15 @@ return (
     <div 
         style={{
                 backgroundImage: `url(${imageBasePath}${movie.backdrop_path})`,
-            }}
+        }}
         className="movie-card"
     >
         <div className="content">
-            <div className="flex p-5 poster">
+            <div className="flex justify-center p-5 poster">
                 <img
                 src={`${imageBasePath}${movie.poster_path}`}
                 alt={movie.title}
-                className="rounded-10"
+                className="movie-poster rounded-10"
                 />
             </div>
             <div className="flex flex-col text-white p-5 justify-center">
@@ -121,7 +122,8 @@ return (
                         <h1>({formattedYear})</h1>
                     </div>
                 </div>
-                <div className="flex ">
+                <div className="movie-clasification">
+                    <Clasification movie={movie} />
                     <div className="mr-2">
                         {newDate}
                     </div>
