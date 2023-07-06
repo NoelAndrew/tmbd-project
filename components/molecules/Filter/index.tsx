@@ -1,22 +1,22 @@
-import { useState } from 'react';
+import  { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) => {
+const Filter = ( { getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>  { 
     const [isOpen, setIsOpen] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
 
-    const handleToggle = () => {
+    const handleToggle = () => { 
       setIsOpen(!isOpen);
     };
     const [isOpen2, setIsOpen2] = useState(false);
 
-    const handleToggle2 = () => {
+    const handleToggle2 = () => { 
       setIsOpen2(!isOpen2);
     };
     const [isOpen3, setIsOpen3] = useState(false);
 
-    const handleToggle3 = () => {
+    const handleToggle3 = () => { 
       setIsOpen3(!isOpen3);
     };
     return(
@@ -26,13 +26,13 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
             <div className="bg-white border border-gray-300 rounded-lg shadow-lg items-center mt-2">
                 <button
                     className="flex items-center justify-between w-full p-4"
-                    onClick={handleToggle}
+                    onClick= { handleToggle }
                 >
                     <span className="text-lg font-bold">Sort</span>
                     <svg
-                        className={`w-6 h-6 transition-transform ${
+                        className= { `w-6 h-6 transition-transform $ { 
                         isOpen ? 'transform rotate-180' : ''
-                        }`}
+                        }` }
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -41,43 +41,43 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                         <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth= { 2 }
                         d="M19 9l-7 7-7-7"
                         />
                     </svg>
                 </button>
-                {isOpen && (
+                 { isOpen && (
                 <div className="p-4 bg-white">
                     <div className="p-4 border-t-2 border-b-2 border-gray-200">
                         <p className="text-gray-400">Show me</p>
                         <div className="mt-2">
                             <div>
-                                <input type="radio" id="popularMovies" name="movieSort" className="w-4 h-4 mr-2" onClick={getPopularMovies} defaultChecked/>
+                                <input type="radio" id="popularMovies" name="movieSort" className="w-4 h-4 mr-2" onClick= { getPopularMovies } defaultChecked/>
                                 <label htmlFor="popularMovies">By Popularity</label>
                             </div>
                             <div>
-                                <input type="radio" id="upcomingMovies" name="movieSort" className="w-4 h-4 mr-2" onClick={getUpcomingMovies} />
+                                <input type="radio" id="upcomingMovies" name="movieSort" className="w-4 h-4 mr-2" onClick= { getUpcomingMovies } />
                                 <label htmlFor="upcomingMovies">By Upcoming</label>
                             </div>
                             <div>
-                                <input type="radio" id="betterRated" name="movieSort" className="w-4 h-4 mr-2" onClick={getRatedMovies} />
+                                <input type="radio" id="betterRated" name="movieSort" className="w-4 h-4 mr-2" onClick= { getRatedMovies } />
                                 <label htmlFor="betterRated">Top Rated</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                )}
+                ) }
             </div>
             <div className="bg-white border border-gray-300 rounded-lg shadow-lg items-center mt-2">
                 <button
                     className="flex items-center justify-between w-full p-4"
-                    onClick={handleToggle2}
+                    onClick= { handleToggle2 }
                 >
                     <span className="text-lg font-bold">Where to watch</span>
                     <svg
-                        className={`w-6 h-6 transition-transform ${
+                        className= { `w-6 h-6 transition-transform $ { 
                         isOpen2 ? 'transform rotate-180' : ''
-                        }`}
+                        }` }
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -86,12 +86,12 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                         <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth= { 2 }
                         d="M19 9l-7 7-7-7"
                         />
                     </svg>
                 </button>
-                {isOpen2 && (
+                 { isOpen2 && (
                 <div className="p-4 bg-white">
                     <div className="mt-2">
                         <div>
@@ -112,18 +112,18 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                         </div>
                     </div>
                 </div>
-                )}
+                ) }
             </div>
             <div className="bg-white mt-2 mb-2">
             <button
                 className="flex items-center justify-between w-full p-4"
-                onClick={handleToggle3}
+                onClick= { handleToggle3 }
             >
                 <span className="text-lg font-bold">Filters</span>
                 <svg
-                    className={`w-6 h-6 transition-transform ${
+                    className= { `w-6 h-6 transition-transform $ { 
                     isOpen3 ? 'transform rotate-180' : ''
-                    }`}
+                    }` }
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -132,12 +132,12 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                     <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth= { 2 }
                     d="M19 9l-7 7-7-7"
                     />
                 </svg>
                 </button>
-                {isOpen3 && (
+                 { isOpen3 && (
                 <div className="bg-white">
                     <div className="p-4 border-t-2 border-b-2 border-gray-200">
                         <p className="text-gray-400">Show me</p>
@@ -176,7 +176,7 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                                 </div>
                                 <div className="w-40">
                                     <div className="border items-center border-gray-400 p-2 overflow-hidden">
-                                        <DatePicker selected={startDate} onChange={(date: any) => setStartDate(date)} />
+                                        <DatePicker selected= { startDate } onChange= { (date: any) => setStartDate(date) } />
                                     </div>
                                 
                                 </div>
@@ -187,7 +187,7 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                                 </div>
                                 <div className="w-40">
                                     <div className="border items-center border-gray-400 p-2 overflow-hidden" >
-                                        <DatePicker selected={startDate} onChange={(date: any) => setStartDate(date)} />
+                                        <DatePicker selected= { startDate } onChange= { (date: any) => setStartDate(date) } />
                                     </div>
                                 </div>
                             </div>
@@ -213,10 +213,10 @@ const Filter = ({ getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>
                         </div>
                     </div>
                 </div>
-                )}
+                ) }
             </div>
         </div>
     </div> 
     )
-}
+ }
 export default Filter;

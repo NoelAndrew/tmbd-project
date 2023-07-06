@@ -3,6 +3,7 @@ import Filter from '../components/molecules/Filter'
 import MovieList from '../components/molecules/MovieList'
 import { movieServiceList, movieServiceUp } from './api'
 import { useState, useEffect } from 'react'
+import Head from 'next/head'
 
 export default function Home( {popularMovies, upcomingMovies, RatedMovies}: any) {
   const [movies, setMovies] = useState([]);
@@ -27,20 +28,23 @@ export default function Home( {popularMovies, upcomingMovies, RatedMovies}: any)
 
   return (
     <>
+    <Head>
+      <title>TMDB</title>
+    </Head>
     <Navigation/>
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-20`}
+      className={`flex min-h-screen flex-col items-center justify-between p-10`}
     >
       <div className="main-content">
         <div className="filter-container">
           <Filter 
-          getPopularMovies={getPopularMovies}
-          getUpcomingMovies={getUpcomingMovies}
-          getRatedMovies={getRatedMovies}
+          getPopularMovies={ getPopularMovies }
+          getUpcomingMovies={ getUpcomingMovies }
+          getRatedMovies={ getRatedMovies }
           />
         </div>
         <div className="movie-list w-3/4">
-          <MovieList movies={movies}/>
+          <MovieList movies={ movies }/>
         </div>
       </div>
     </main>

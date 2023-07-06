@@ -183,7 +183,13 @@ p {
 .movie-clasification {
   display: flex;
 }
-
+.social-link {
+  margin-right: 10px;
+}
+.link {
+  border-left: 1px solid #d7d7d7;
+  padding-left: 8px;
+}
 @media only screen and (max-width: 767px ) {
   .content {
     display: block;

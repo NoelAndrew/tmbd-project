@@ -47,17 +47,17 @@ const CastCrew = ({ movie, cast, imageBasePath }: Props) => {
                 <div className="carrousell">
                 <div className="flex overflow-hidden">
                     {cast.map((cast: any) => (
-                    <div key={movie.id} className="carrousell-container shadow-lg border border-gray-300 bg-white rounded-lg">
-                        <div key={cast.id} className="container">
+                    <div key={ movie.id } className="carrousell-container shadow-lg border border-gray-300 bg-white rounded-lg">
+                        <div key={ cast.id } className="container">
                             <img
-                                src={`${imageBasePath}${cast.profile_path}`}
-                                alt={cast.name}
+                                src={`${imageBasePath}${ cast.profile_path }`}
+                                alt={ cast.name }
                                 className="w-full rounded-lg"
                             />
                         </div>
                         <div className="mt-2 p-3">
-                            <p className="text-base font-bold">{cast.name}</p>
-                            {cast.character}
+                            <p className="text-base font-bold">{ cast.name }</p>
+                            { cast.character }
                         </div>
                     
                     </div>
@@ -66,16 +66,34 @@ const CastCrew = ({ movie, cast, imageBasePath }: Props) => {
                 </div>
                 </div>
                 <div className="right-container">
+                    <div className="flex">
+                        <div className="social-link">
+                            <img src="/fb.svg" width={ 29 } height={ 29 }/>
+
+                        </div>
+                        <div className="social-link">
+                        <img src="/tw.svg" width={ 29 } height={ 29 }/>
+
+                        </div>
+                        <div className="social-link">
+                        <img src="/ig.svg" width={ 29 } height={ 29 }/>
+
+                        </div>
+                        <div className="link">
+                        <img src="/link.svg" width={ 29 } height={ 29 }/>
+
+                        </div>
+                    </div>
                     <h1 className="text-lg font-bold pt-3">Original Title</h1>
-                    <p>{movie.original_title}</p>
+                    <p>{ movie.original_title }</p>
                     <h1 className="text-lg font-bold pt-3">Status</h1>
-                    <p>{movie.status}</p>
+                    <p>{ movie.status }</p>
                     <h1 className="text-lg font-bold pt-3">Original Language</h1>
-                    <p>{translate(movie.original_language)}</p>
+                    <p>{ translate(movie.original_language) }</p>
                     <h1 className="text-lg font-bold pt-3">Budget</h1>
-                    <p>{formatCurrency(movie.budget)}</p>
+                    <p>{ formatCurrency(movie.budget) }</p>
                     <h1 className="text-lg font-bold pt-3">Revenue</h1>
-                    <p>{formatCurrency(movie.revenue)}</p>
+                    <p>{ formatCurrency(movie.revenue) }</p>
                 </div>
             </div>
         </div>

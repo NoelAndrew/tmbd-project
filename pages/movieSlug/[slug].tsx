@@ -6,6 +6,7 @@ import DropNavbar from "../../components/atoms/DropNavbar";
 import Percentage from "../../components/atoms/Percentage";
 import CastCrew from "../../components/atoms/CastCrew";
 import Clasification from "@/components/atoms/Clasification";
+import Head from "next/head";
 
 const MyMovie = () => {
     const imageBasePath = 'https://image.tmdb.org/t/p/w500';
@@ -40,7 +41,7 @@ const MyMovie = () => {
         const  movieId  = router.query.slug
         if (movieId) {
           movieServiceId.getMovieByName(movieId)
-            .then(({ data } : {data: any}) => {
+            .then(({ data } : {data: any }) => {
                 setmovie(data);
             })
             .catch((error: any) => {
@@ -86,17 +87,20 @@ const MyMovie = () => {
 
 
     if (isLoading) {
-        return <><p> Está cargando...</p></>
+        return <><p> Is Loading...</p></>
     }
 
     if (isError) {
-        return <><p>{error}</p></>
+        return <><p>{ error }</p></>
     }
     const formattedYear = new Date(movie.release_date).toLocaleDateString('en-US', {
         year: 'numeric'
     });
 return (
    <>
+    <Head>
+      <title>TMDB { movie.title }</title>
+    </Head>
     <Navigation/>
     <DropNavbar/>
     <div 
@@ -108,58 +112,58 @@ return (
         <div className="content">
             <div className="flex justify-center p-5 poster">
                 <img
-                src={`${imageBasePath}${movie.poster_path}`}
-                alt={movie.title}
+                src={ `${imageBasePath}${movie.poster_path}` }
+                alt={ movie.title }
                 className="movie-poster rounded-10"
                 />
             </div>
             <div className="flex flex-col text-white p-5 justify-center">
                 <div className="title flex">
                     <div className="mr-5">
-                        <h1>{movie.title}</h1>
+                        <h1>{ movie.title }</h1>
                     </div>
                     <div className="text-gray-200">
-                        <h1>({formattedYear})</h1>
+                        <h1>({ formattedYear })</h1>
                     </div>
                 </div>
                 <div className="movie-clasification">
-                    <Clasification movie={movie} />
+                    <Clasification movie={ movie } />
                     <div className="mr-2">
-                        {newDate}
+                        { newDate }
                     </div>
                     <div className="mr-2">
                         &middot;
                         {movie.genres.map(( genres: any ) => (
-                            <span>{genres.name}&nbsp;</span>
+                            <span>{ genres.name }&nbsp;</span>
                         ))}
                         &middot;
                     </div>
                     <div className="mr-2">
-                        {convertHours(movie.runtime)}
+                        { convertHours(movie.runtime) }
                     </div>
                 </div>
                 <div className="flex mt-4 items-center mr-10 mb-5">
                     <div className="score-static flex mr-4">
-                        <Percentage decimal={movie.vote_average} />
+                        <Percentage decimal={ movie.vote_average } />
                     </div>
                     <div className="flex w-12 mr-10">
                         <h2 className="font-bold">User Score</h2>  
                     </div>
                     <div className="circle-icon mr-5">
-                        <img src="/list.svg" width={29} height={29}/>
+                        <img src="/list.svg" width={ 29 } height={ 29}/>
                     </div>
                     <div className="circle-icon mr-5">
-                        <img src="/heart.svg" width={29} height={29}/>
+                        <img src="/heart.svg" width={29 } height={ 29 }/>
                     </div>
                     <div className="circle-icon mr-5">
-                        <img src="/save.svg" width={29} height={29}/>
+                        <img src="/save.svg" width={ 29 } height={ 29 }/>
                     </div>
                     <div className="circle-icon mr-5">
-                        <img src="/star.svg" width={29} height={29}/>
+                        <img src="/star.svg" width={ 29 } height={ 29 }/>
                     </div>
                     <div className="flex">
                         <div className="mr-2">
-                            <img src="/play.svg" width={29} height={29}/>
+                            <img src="/play.svg" width={ 29 } height={ 29 }/>
                         </div>
                         <div>
                             <p className="text-white">Play Trailer</p>
@@ -167,7 +171,7 @@ return (
                     </div>
                 </div>
                 <div className="flex mb-2">
-                   <p className="tagline">{movie.tagline}</p>
+                   <p className="tagline">{ movie.tagline }</p>
                 </div>
                 <div className="flex text-white mb-2">
                    <h1 className="text-lg font-bold">Overview</h1>
@@ -175,19 +179,19 @@ return (
                 </div>
                 <div className="flex text-white description">
                    <p>
-                        {movie.overview}
+                        { movie.overview }
                    </p>
                 </div>
                 <div className="flex text-white description mt-10">
                    <div className="director-container">
-                        {directors.map((element: any) => (
-                            <p className="text-lg font-bold" key={element.id}>{element.name}</p>
+                        { directors.map((element: any) => (
+                            <p className="text-lg font-bold" key={ element.id }>{ element.name }</p>
                         ))}
                         <p>Director, Writer</p>
                    </div>
                    <div>
-                        {characters.map((element: any) => (
-                            <p className="text-lg font-bold" key={element.id}>{element.name}</p>
+                        { characters.map((element: any) => (
+                            <p className="text-lg font-bold" key={ element.id }>{ element.name }</p>
                         ))}
                         <p >Characters</p>
                    </div>
@@ -196,12 +200,10 @@ return (
         </div>
     </div>
     <CastCrew
-    movie={movie}
-    cast={cast}
-    imageBasePath={imageBasePath} />
+    movie={ movie }
+    cast={ cast }
+    imageBasePath={ imageBasePath } />
     </>
-)
-
-};
-
+    )
+}
 export default MyMovie;

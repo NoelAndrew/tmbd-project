@@ -22,8 +22,8 @@ const Percentage = ({ decimal }: Props) => {
             <>
             <div className="flex items-center">
               <CircularProgressbar
-                value={porcentaje}
-                text={`${porcentaje}%`}
+                value={ porcentaje }
+                text={`${ porcentaje }%`}
                 styles={{
                   text: {
                     fontSize: "1.9vw",
@@ -38,7 +38,7 @@ const Percentage = ({ decimal }: Props) => {
             <>
             <div className="flex items-center">
               <CircularProgressbar
-                value={porcentaje}
+                value={ porcentaje }
                 text={`${porcentaje}%`}
                 styles={{
                   text: {
@@ -49,7 +49,7 @@ const Percentage = ({ decimal }: Props) => {
                 }}
               />
             </div>
-            </>
+          </>
         }
     </div>
   );
