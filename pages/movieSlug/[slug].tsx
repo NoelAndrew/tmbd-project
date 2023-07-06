@@ -121,7 +121,7 @@ return (
                         <h1>{ movie.title }</h1>
                     </div>
                     <div className="text-gray-200">
-                        <h1>({ formattedYear })</h1>
+                        <h1>{`(${formattedYear})`}</h1>
                     </div>
                 </div>
                 <div className="movie-clasification">
@@ -140,24 +140,26 @@ return (
                         { convertHours(movie.runtime) }
                     </div>
                 </div>
-                <div className="flex mt-4 items-center mr-10 mb-5">
+                <div className="percentage-info mt-4 items-center mr-10 mb-5">
                     <div className="score-static flex mr-4">
                         <Percentage decimal={ movie.vote_average } />
                     </div>
-                    <div className="flex w-12 mr-10">
-                        <h2 className="font-bold">User Score</h2>  
-                    </div>
-                    <div className="circle-icon mr-5">
-                        <img src="/list.svg" width={ 29 } height={ 29}/>
-                    </div>
-                    <div className="circle-icon mr-5">
-                        <img src="/heart.svg" width={29 } height={ 29 }/>
-                    </div>
-                    <div className="circle-icon mr-5">
-                        <img src="/save.svg" width={ 29 } height={ 29 }/>
-                    </div>
-                    <div className="circle-icon mr-5">
-                        <img src="/star.svg" width={ 29 } height={ 29 }/>
+                    <div className="flex">
+                        <div className="flex w-12 mr-10">
+                            <h2 className="font-bold">User Score</h2>  
+                        </div>
+                        <div className="circle-icon mr-5">
+                            <img src="/list.svg" width={ 29 } height={ 29}/>
+                        </div>
+                        <div className="circle-icon mr-5">
+                            <img src="/heart.svg" width={29 } height={ 29 }/>
+                        </div>
+                        <div className="circle-icon mr-5">
+                            <img src="/save.svg" width={ 29 } height={ 29 }/>
+                        </div>
+                        <div className="circle-icon mr-5">
+                            <img src="/star.svg" width={ 29 } height={ 29 }/>
+                        </div>
                     </div>
                     <div className="flex">
                         <div className="mr-2">

@@ -4,11 +4,11 @@ import ReleaseDate from '../../atoms/ReleaseDate';
  
 const MovieList = ({ movies }: any) => {
   const imageBasePath = 'https://image.tmdb.org/t/p/w500';
-  
+
   return (
     <div className="card-grid">
     { movies.map((movie: any) => (
-      <div key={ movie.id } className="border border-gray-300 bg-white rounded-lg">
+      <div key={ movie.id } className="mb-2 border border-gray-300 bg-white rounded-lg">
         <div className="more">
             <Image src="/more.svg" width={ 29 } height={ 29 } alt={ movie.title }/>
         </div>

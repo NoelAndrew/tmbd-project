@@ -9,13 +9,13 @@ interface Props {
 const Percentage = ({ decimal }: Props) => {
     const router = useRouter();
     const currentPage = router.pathname;
-    
-    const convertirDecimalAPorcentaje = (decimal: any) => {
-        const porcentaje = Math.floor(decimal * 10);
-        return porcentaje;
+
+    const convertirDecimalApercentage = (decimal: any) => {
+        const percentage = Math.floor(decimal * 10);
+        return percentage;
     };
 
-    const porcentaje = convertirDecimalAPorcentaje(decimal);
+    const percentage = convertirDecimalApercentage(decimal);
 
   return (
     <div>
@@ -23,8 +23,8 @@ const Percentage = ({ decimal }: Props) => {
             <>
             <div className="flex items-center">
               <CircularProgressbar
-                value={ porcentaje }
-                text={`${ porcentaje }%`}
+                value={ percentage }
+                text={`${ percentage }%`}
                 styles={{
                   text: {
                     fontSize: "1.9vw",
@@ -39,11 +39,10 @@ const Percentage = ({ decimal }: Props) => {
             <>
             <div className="flex items-center">
               <CircularProgressbar
-                value={ porcentaje }
-                text={`${porcentaje}%`}
+                value={ percentage }
+                text={`${percentage}%`}
                 styles={{
                   text: {
-                    fontSize: "2vw",
                     fontWeight: 400,
                     fill: "#ffffff",
                   }

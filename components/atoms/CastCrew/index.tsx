@@ -66,10 +66,9 @@ const CastCrew = ({ movie, cast, imageBasePath }: Props) => {
                 </div>
                 </div>
                 <div className="right-container">
-                    <div className="flex">
+                    <div className="social-icons">
                         <div className="social-link">
                             <img src="/fb.svg" width={ 29 } height={ 29 }/>
-
                         </div>
                         <div className="social-link">
                         <img src="/tw.svg" width={ 29 } height={ 29 }/>

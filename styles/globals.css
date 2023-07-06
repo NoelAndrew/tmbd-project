@@ -71,7 +71,6 @@ p {
   margin-left: 10px;
   display: flex;
   width: 68px;
-  height: 68px;
   background-color: #081c22;
   border-radius: 100px;
 }
@@ -180,11 +179,17 @@ p {
 .filter-container{
   width: 25%;
 }
+.percentage-info {
+  display: flex;
+}
 .movie-clasification {
   display: flex;
 }
 .social-link {
   margin-right: 10px;
+}
+.social-icons {
+  display: flex;
 }
 .link {
   border-left: 1px solid #d7d7d7;
@@ -194,6 +199,9 @@ p {
   .content {
     display: block;
   }
+  .social-icons {
+    display: -webkit-inline-box;
+  }
   .navbar {
     display: block;
   }
@@ -201,9 +209,12 @@ p {
     display: block;
   }
   .main-content {
-    display: block;
+    display: contents;
   }
   .card-grid {
+    display: block;
+  }
+  .percentage-info {
     display: block;
   }
   .movie-list {
