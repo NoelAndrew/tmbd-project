@@ -2,10 +2,9 @@ import Image from 'next/image';
 import Percentage from '../../atoms/Percentage';
 import ReleaseDate from '../../atoms/ReleaseDate';
  
-const MovieList = ({ movies }: any) => { 
-
- const imageBasePath = 'https://image.tmdb.org/t/p/w500';
-
+const MovieList = ({ movies }: any) => {
+  const imageBasePath = 'https://image.tmdb.org/t/p/w500';
+  
   return (
     <div className="card-grid">
     { movies.map((movie: any) => (

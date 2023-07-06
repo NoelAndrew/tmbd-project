@@ -9,6 +9,7 @@ interface Props {
 const Percentage = ({ decimal }: Props) => {
     const router = useRouter();
     const currentPage = router.pathname;
+    
     const convertirDecimalAPorcentaje = (decimal: any) => {
         const porcentaje = Math.floor(decimal * 10);
         return porcentaje;

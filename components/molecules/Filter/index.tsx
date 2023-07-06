@@ -3,19 +3,17 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Filter = ( { getPopularMovies, getUpcomingMovies, getRatedMovies }: any) =>  { 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen2, setIsOpen2] = useState(false);
+    const [isOpen3, setIsOpen3] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
-
+    
     const handleToggle = () => { 
       setIsOpen(!isOpen);
     };
-    const [isOpen2, setIsOpen2] = useState(false);
-
     const handleToggle2 = () => { 
       setIsOpen2(!isOpen2);
     };
-    const [isOpen3, setIsOpen3] = useState(false);
-
     const handleToggle3 = () => { 
       setIsOpen3(!isOpen3);
     };

@@ -84,8 +84,6 @@ const MyMovie = () => {
         }
     }, [crew]);
 
-
-
     if (isLoading) {
         return <><p> Is Loading...</p></>
     }

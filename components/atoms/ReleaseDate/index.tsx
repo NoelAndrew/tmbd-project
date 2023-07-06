@@ -5,7 +5,6 @@ interface Props  {
  }
 
 const ReleaseDate = ( { dateString }: Props) =>  { 
-
     const formattedDate = new Date(dateString).toLocaleDateString('en-US',  { 
       month: 'short',
       day: 'numeric',
